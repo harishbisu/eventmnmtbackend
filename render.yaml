@@ -1,15 +1,15 @@
-{
-    "version": 2,
-    "builds": [
-        {
-            "src": "src/main.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "src/main.js"
-        }
-    ]
-}
+services:
+  - type: web
+    name: nestjs-backend
+    env: node
+    plan: free   
+    buildCommand: npm install && npm build
+    startCommand: npm start:prod
+    autoDeploy: true
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      - key: PORT
+        value: 3000
