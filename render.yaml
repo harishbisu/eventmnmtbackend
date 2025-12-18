@@ -3,8 +3,8 @@ services:
     name: nestjs-backend
     env: node
     plan: free   
-    buildCommand: npm install && npm build
-    startCommand: npm start:prod
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
     autoDeploy: true
 
     envVars:
@@ -13,3 +13,5 @@ services:
 
       - key: PORT
         value: 3000
+      
+
